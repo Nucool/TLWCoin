@@ -87,9 +87,3 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 tlwexchange/package-lock.json
-tlwexchange/src/contracts/ERC20.json
-tlwexchange/src/contracts/IERC20.json
-tlwexchange/src/contracts/Migrations.json
-tlwexchange/src/contracts/Ownable.json
-tlwexchange/src/contracts/SafeMath.json
-tlwexchange/src/contracts/TlwToken.json
