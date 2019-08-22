@@ -292,7 +292,7 @@ class App extends React.Component {
                             onChange={this.handleToAddressChange}
                           >
                             <option value="0x0">Select account</option>
-                            <option value="0xe962b9A35a7C5223372780Ce667f60F086133F6B">TLW Coin</option>
+                            <option value="0xCC0a37C3E8F85713dB2Ce5Ff74D52399fbc935cd">TLW Coin</option>
                           </select>
                         </div>
 
