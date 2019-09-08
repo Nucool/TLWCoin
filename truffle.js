@@ -1,5 +1,6 @@
 var HDWalletProvider = require("truffle-hdwallet-provider");
-const MNEMONIC = 'pelican asset thing damp inhale advice abstract fix snap truck identify flush';
+const MNEMONIC = 'YOUR_MENEMIC';
+const INFURA_APP = 'YOUR_INFURA_APP'
 
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
@@ -13,10 +14,10 @@ module.exports = {
     },
     ropsten: {
       provider: function() {
-        return new HDWalletProvider(MNEMONIC, "https://ropsten.infura.io/v3/a3595f6b306849fa894501078c6c81b2")
+        return new HDWalletProvider(MNEMONIC, INFURA_APP)
       },
       network_id: 3,
-      gas: 4000000      //make sure this gas allocation isn't over 4M, which is the max
+      gas: 4000000 
     }
   }
 };

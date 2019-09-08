@@ -51,7 +51,6 @@ contract TlwToken is ERC20, Ownable {
     }
 
     function buyToken(uint256 amount, address toAddress) public payable {
-        //require(msg.value == (amount * internalPrice));
         address _toAddress = msg.sender;
         if(toAddress != address(0)) {
             _toAddress = toAddress;
@@ -60,9 +59,6 @@ contract TlwToken is ERC20, Ownable {
         _transfer(owner(), _toAddress, amount);
         _reservePay = _reservePay.add(msg.value);
         _addTransactionBuy(msg.sender, internalPrice, amount, msg.value, _toAddress);
-
-        //_deposits[msg.sender] = _deposits[msg.sender].add(msg.value);
-        //_ownerPay.transfer(msg.value);
     }
 
     function withdraw(address payable payee, uint256 amount) public {
