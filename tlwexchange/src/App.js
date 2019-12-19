@@ -121,7 +121,8 @@ class App extends React.Component {
     totalCoin: '',
     totalEth: '',
     buyStatus: 'Waiting',
-    toAddress: '0x0'
+    toAddress: '0x0',
+    textWarning: ''
   };
 
   componentDidMount() {
@@ -208,7 +209,8 @@ class App extends React.Component {
   handleToAddressChange(e) {
     e.preventDefault();
     this.setState({
-      toAddress: e.target.value
+      toAddress: e.target.value,
+      textWarning: e.target.value === 'xxx' ? 'Wait for Implementation' : ''
     })
     console.log('toAddress change', e.target.value)
   }
@@ -292,8 +294,12 @@ class App extends React.Component {
                             onChange={this.handleToAddressChange}
                           >
                             <option value="0x0">Select account</option>
-                            <option value="0xCC0a37C3E8F85713dB2Ce5Ff74D52399fbc935cd">TLW Coin</option>
+                            <option value="0xCC0a37C3E8F85713dB2Ce5Ff74D52399fbc935cd">TLW E-Commerce Store</option>
+                            <option value="xxx">Lazada</option>
+                            <option value="xxx">Shopee</option>
+                            <option value="xxx">Alibaba</option>
                           </select>
+                          <small style={{textAlign:'center', color:'red', marginLeft: '10px'}}>{this.state.textWarning}</small>
                         </div>
 
                         <div className="form-group">
@@ -327,7 +333,7 @@ class App extends React.Component {
                             <div className="col-md-5">
                               <button className="btn btn-block btn-primary"
                                 onClick={this.handleBuyClick}
-                                disabled={this.state.totalCoin !== '' && this.state.totalCoin !== '0' ? false : true}
+                                disabled={this.state.totalCoin !== '' && this.state.totalCoin !== '0' && this.state.textWarning === '' ? false : true}
                               >
                                 Buy CryptoCurrency
                               </button>
